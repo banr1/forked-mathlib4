@@ -31,7 +31,7 @@ jobs:
     steps:
       # Checkout repository, so that we can fetch tags to decide which branch we want.
       - name: Checkout branch or tag
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Fetch latest tags (if nightly)
         if: matrix.branch_type == 'nightly'
@@ -52,13 +52,13 @@ jobs:
 
       # Checkout the branch or tag we want to test.
       - name: Checkout branch or tag
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           repository: ${{ matrix.branch_type == 'nightly' && 'leanprover-community/mathlib4-nightly-testing' || github.repository }}
           ref: ${{ env.BRANCH_REF }}
 
       - name: Configure Lean
-        uses: leanprover/lean-action@434f25c2f80ded67bba02502ad3a86f25db50709 # v1.3.0
+        uses: leanprover/lean-action@c544e89643240c6b398f14a431bcdc6309e36b3e # v1.4.0
         with:
           auto-config: false
           use-github-cache: false
@@ -106,7 +106,7 @@ jobs:
         branch_type: [master, nightly]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Get job status and URLs
         id: get-status
@@ -175,7 +175,7 @@ jobs:
     steps:
       # Checkout repository, so that we can fetch tags to decide which branch we want.
       - name: Checkout branch or tag
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Fetch latest tags (if nightly)
         if: matrix.branch_type == 'nightly'
@@ -196,13 +196,13 @@ jobs:
 
       # Checkout the branch or tag we want to test.
       - name: Checkout branch or tag
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           repository: ${{ matrix.branch_type == 'nightly' && 'leanprover-community/mathlib4-nightly-testing' || github.repository }}
           ref: ${{ env.BRANCH_REF }}
 
       - name: Configure Lean
-        uses: leanprover/lean-action@434f25c2f80ded67bba02502ad3a86f25db50709 # v1.3.0
+        uses: leanprover/lean-action@c544e89643240c6b398f14a431bcdc6309e36b3e # v1.4.0
         with:
           auto-config: false
           use-github-cache: false
@@ -225,7 +225,7 @@ jobs:
         branch_type: [master, nightly]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Get job status and URLs
         id: get-status
